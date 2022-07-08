@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import Loader from "../Loader";
-import MovieInfo from "../MovieInfo";
 
 const Description = ({match}) => {
   const [movieDetails, setmovieDetails] = useState([]);
@@ -29,18 +28,24 @@ const Description = ({match}) => {
   }, [fetchMovieInfo]);
 
   return (
-    <div key={movieDetails.eventId} style={{height: 250, witdh: 150, backgroundColor: 'blue'}}>
-      {
-        isLoading
-        ? <Loader />
-        : (
-          <>
-          {movieDetails.map((d) => <MovieInfo key={d.eventId} movie={d} />)}
-          </>
-        )
-      }
-    </div>
+    
+    <div className="filmDescription" style={{width: 200, height: 150, backgroundColor: 'green'}}>
+      {isLoading
+      ? <Loader />
+    :
+    (<>
+      {movieDetails.map((m) =>
+      <div key={m.eventId}>
+        <img className='movie-img' style={{height:150, width:200}} src={m.posterLink} alt="movie" />
+      <div className='movie-name'>{m.name}</div>
+      <div className="movie-annotation">{m.annotation}</div>
+        </div>
+        )} 
+    </>
+    
   )
 }
+</div>
+  )}
 
 export default Description;

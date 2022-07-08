@@ -8,13 +8,11 @@ import Description from '../components/Description';
 const MovieRoutes = () => (
   <BrowserRouter>
     <Header />
-
     <Routes>
       <Route path='/' element={<MovieList />} />
-      <Route path='/movie/:eventId' element={<Description />} />
+      <Route path='/MovieList/:eventId' element={<Description />} />
     </Routes>
   </BrowserRouter>
-  
 )
 
 export default MovieRoutes; 

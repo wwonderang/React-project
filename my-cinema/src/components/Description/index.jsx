@@ -7,11 +7,11 @@ import Button from "../Button";
 import './description.scss';
 
 const Description = ({match}) => {
-  const [movieDetails, setmovieDetails] = useState([]);
+  const [ movieDetails, setmovieDetails ] = useState([]);
 
   const { eventId } = useParams();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(false);
 
   console.log('eventId', eventId);
 
@@ -46,7 +46,6 @@ const Description = ({match}) => {
         )} 
         <Button />
     </>
-    
   )
 }
 </div>

@@ -2,6 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import Loader from "../Loader";
+import Button from "../Button";
+
+import './description.scss';
 
 const Description = ({match}) => {
   const [movieDetails, setmovieDetails] = useState([]);
@@ -29,18 +32,19 @@ const Description = ({match}) => {
 
   return (
     
-    <div className="filmDescription" style={{width: 200, height: 150, backgroundColor: 'green'}}>
+    <div className="filmDescription">
       {isLoading
       ? <Loader />
     :
     (<>
       {movieDetails.map((m) =>
       <div key={m.eventId}>
-        <img className='movie-img' style={{height:150, width:200}} src={m.posterLink} alt="movie" />
+        <img className='movie-img' src={m.posterLink} alt="movie" />
       <div className='movie-name'>{m.name}</div>
       <div className="movie-annotation">{m.annotation}</div>
         </div>
         )} 
+        <Button />
     </>
     
   )

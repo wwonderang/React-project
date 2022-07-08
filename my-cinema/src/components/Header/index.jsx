@@ -1,7 +1,7 @@
 import React from "react";
 // import logo from './../img/logoHouse.jpg';
 import logo from './../../img/cinema-icon.jpg';
-import './../Header/header.css'
+import './../Header/header.scss'
 
 const Header = () => {
 

@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 
 import Button from '../Button';
 
+import './movie.scss';
+
 const Movie = (props) => {
   const { movie } = props;
   const { posterLink, name, ageLimit } = movie;
 
   return (
     <div
-      style={{height: 250, width: 200, marginTop: 20}} 
-      className='movie-wrapper'
-    >
-      <img className='movie-img' style={{height:150, width:200}} src={posterLink} alt="movie" />
+      className='movie-wrapper'>
+      <img className='movie-img' src={posterLink} alt="movie" />
       <div className='movie-name'>{name}</div>
       <div className='movie-age'>{ageLimit.acronym}</div>
 

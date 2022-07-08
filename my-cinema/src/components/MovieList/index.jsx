@@ -3,6 +3,8 @@ import React, { useEffect, useState, useCallback } from "react";
 import Movie from "../Movie";
 import Loader from "../Loader";
 
+import './movieList.scss';
+
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
 
@@ -22,7 +24,7 @@ const MovieList = () => {
   }, [fetchMovies]);
 
   return (
-    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
+    <div className="movieList">
       {
         isLoading
         ? <Loader />

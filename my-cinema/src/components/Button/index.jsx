@@ -3,9 +3,7 @@ import React from "react";
 const Button = () => {
 
   return (
-    <div className="buyTicket">
-    <button>Buy ticket</button>
-    </div>
+    <button className="buyTicket">Buy ticket</button>
   )
 }
 

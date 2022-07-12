@@ -13,8 +13,6 @@ const Description = ({match}) => {
 
   const [ isLoading, setIsLoading ] = useState(false);
 
-  console.log('eventId', eventId);
-
   const fetchMovieInfo = useCallback(async () => {
     setIsLoading(true);
     

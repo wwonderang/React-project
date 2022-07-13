@@ -23,7 +23,6 @@ const MovieList = () => {
 // }
 
   const handleCityChange = (e) => {
-    console.log('e', e.target.value); // 1 и 5
     setCity(e.target.value) 
   };
   // useEffect(() => {
@@ -50,6 +49,7 @@ ${city}%7D&extended=true`);
     }
   }, [city]);
   console.log('movies', movies);
+
   useEffect(() => {
     fetchMovies();
   }, [city]);

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Loader from "../Loader";
 import Button from "../Button";
+import MovieTimetable from "../Timetable";
 
 import './description.scss';
 
@@ -41,6 +42,7 @@ ${eventId}%22,%22city%22:%221%22%7D&extended=true`
         <img className='movie-img' src={m.posterLink} alt="movie" />
         <div className='movie-name'>{m.name}</div>
         <div className="movie-annotation">{m.annotation}</div>
+        <MovieTimetable showInfo={m}/>
         </div>
         )} 
         <Button />

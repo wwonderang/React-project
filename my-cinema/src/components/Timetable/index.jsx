@@ -21,6 +21,7 @@ const MovieTimetable = (props) => {
         </div>
       )
     }
+
     return days;
   }
 

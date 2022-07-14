@@ -1,0 +1,15 @@
+.movie-list {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.city-name {
+  height: 40px;
+  width: 70px;
+  position: absolute;
+  top: 30px;
+  left: 180px;
+  background-color: #d29d581f;
+}

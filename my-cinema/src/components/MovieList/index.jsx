@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 
 import Movie from "../Movie";
 import Loader from "../Loader";
+import Scroll from "../Scroll";
 
 import './movieList.scss';
 
@@ -67,6 +68,7 @@ ${city}%7D&extended=true`);
             <option value={1}>Minsk</option>
             <option value={5}>Grodno</option>
           </select>
+          <Scroll />
           {/* <input type="text" onChange={handleEmailChange} value={email} /> */}
           {movies.map((m) => <Movie key={m.eventId} movie={m} />)}
           </>

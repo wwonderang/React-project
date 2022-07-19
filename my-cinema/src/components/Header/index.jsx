@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="cinema-header">
 
-      <img src={logo} alt="logo" />
+      <img src={ logo } alt="logo" />
 
       <button>Sign in</button>
 

@@ -1,16 +1,18 @@
 import React from "react";
 // import logo from './../img/logoHouse.jpg';
 import logo from './../../img/cinema-icon.jpg';
-import './../Header/header.scss'
+import './header.scss'
 
-const Header = () => {
+const Header = (props) => {
+
+  const { openModal} = props;
 
   return (
     <div className="cinema-header">
 
       <img src={ logo } alt="logo" />
 
-      <button>Sign in</button>
+      <button onClick={openModal}>Sign in</button>
 
       <input type="text" placeholder="Search" />
 

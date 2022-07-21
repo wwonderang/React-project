@@ -4,19 +4,23 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import MovieList from '../components/MovieList';
 import Header from '../components/Header';
 import Description from '../components/Description';
-import Modal from '../components/Modal';
+import BasicModal from '../components/BasicModal';
 
 const MovieRoutes = () => {
-  const [ modalActive, setModalActive ] = useState(true);
+  const [ isModalOpen, setIsModalOpen ] = useState(false);
+
+  const handleBtnClick = () => {
+    setIsModalOpen(true);
+  }
 
   return (
   <BrowserRouter>
-    <Header />
+    <Header openModal={handleBtnClick} />
     <Routes>
       <Route path='/' element={<MovieList />} />
       <Route path='/MovieList/:eventId' element={<Description />} />
     </Routes>
-    <Modal active = {modalActive} setActive={setModalActive} />
+    <BasicModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
   </BrowserRouter>
 )};
 

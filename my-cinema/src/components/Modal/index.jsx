@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import './modal.scss';
 
-const Modal = () => {
+const Modal = (props) => {
 
-  const [active, setActive] = useState(true);
+  const {isActive, setIsActive} = props;
 
   return (
-    <div className={active ? "modal active" : "modal"} onClick={() => setActive(false)}>
+    <div className={isActive ? "modal active" : "modal"} onClick={(() => setIsActive(false))}>
       <div className="modal-content" onClick={(e => e.stopPropagation())}>
 
       </div>

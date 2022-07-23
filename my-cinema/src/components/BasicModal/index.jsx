@@ -83,11 +83,11 @@ export default function BasicModal({isOpen, setIsOpen}) {
     setPhone('+' + +e.target.value);
   }
 
-  const isValidEmail = (email) => {
-    const re = /\S+@\S+\.\S+/;
+  // const isValidEmail = (email) => {
+  //   const re = /\S+@\S+\.\S+/;
 
-    return re.test(email);
-  };
+  //   return re.test(email);
+  // };
 
   const handleShowPassword = () => {
     setPasswordShown(!passwordShown);
@@ -121,10 +121,27 @@ export default function BasicModal({isOpen, setIsOpen}) {
         localStorage.setItem('users', JSON.stringify([...users, newUser]));
       } 
     }
-    if(email !== isValidEmail) {
-      setIsEmailError(true)
-    } else {
-      setIsEmailError(false);
+    // if(email !== isValidEmail) {
+    //   setIsEmailError(true)
+    // } else {
+    //   setIsEmailError(false);
+    // }
+
+    const [isSignIn, setIsSignIn] = useState(false);
+
+    const signIn = () => {
+      const usersJson = localStorage.getItem('users');
+      const users = JSON.parse(usersJson);
+
+      if(!checkIsEmailExist) {
+        setIsEmailExist(false)
+      } 
+      if (password === checkIsEmailExist.password) {
+        localStorage.setItem('isUserAuthrized', email)
+
+        setIsUserAuthrized(email);
+        setIsSignIn(true);
+    }
     }
   
   return (
@@ -168,6 +185,7 @@ export default function BasicModal({isOpen, setIsOpen}) {
         <RemoveRedEyeIcon className='showPswSgnIn' onClick={handleShowPassword}/>
         
         <Button disabled={(!email, !password)} 
+        onClick={signIn}
         className='sign-in-btn' 
         href="#text-buttons">Sign In</Button>
 

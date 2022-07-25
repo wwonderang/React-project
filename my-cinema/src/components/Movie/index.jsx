@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '../Button';
 
@@ -10,6 +10,13 @@ const Movie = (props) => {
   const { movie } = props;
   const { posterLink, name, ageLimit } = movie;
 
+  const navigate = useNavigate();
+
+  const handleBuyClick = (eventId) => () => {
+    console.log('eventId', eventId);
+    navigate(`/MovieList/${movie.eventId}`);
+  }
+
   return (
     <div
       className='movie-wrapper'>
@@ -17,9 +24,8 @@ const Movie = (props) => {
       <div className='movie-name'>{name}</div>
       <div className='movie-age'>{ageLimit.acronym}</div>
 
-      <Link to={`/MovieList/${movie.eventId}`}>
-        <Button />
-      </Link>
+      <button onClick={handleBuyClick(movie.eventId)}>Buy a ticket</button>
+
     </div>
   )
 }
